@@ -1,0 +1,47 @@
+<div class="row btn-page">
+    <div class="col-sm-12">
+        <app-card cardTitle="Placement" [options]="false">
+            <div class="table-responsive">
+                <table class="table table-hover mb-0">
+                    <thead>
+                        <tr>
+
+                            <th>PRODUIT</th>
+                            <th>DESIGNATION</th>
+                            <th>PRIX</th>
+                            <th>QUANTITE</th>
+                            <th>ACTION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor='let d of shoppingCartItems'>
+                            <td><img [src]="d.product.photoName?sanitizer.bypassSecurityTrustUrl(d.product.photoName):avatar" style="height: 40px;width: 40px; border-radius: 50%;" /> </td>
+                            <td>{{d.product.libelle}}</td>
+                            <td>{{d.product.prixNormal}}</td>
+                            <td><button (click)="decrement(d.product)">
+                              <i class="fa fa-minus-circle"></i>
+                           </button>
+                                <input type="number" name="quantity" [(ngModel)]="d.quantity" disabled class="form-control input-number">
+                                <button (click)="increment(d.product)">
+                                  <i class="fa fa-cart-plus"></i>
+                           </button></td>
+
+                            <td>
+                                <button (click)="removeItem(d)" class='btn btn-danger '><i class="fa fa-trash"></i></button></td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+        </app-card>
+        <div class="card-footer ">
+            <div class="row ">
+                <div class="col-sm-12">
+                    <button class="btn btn-primary mb-2" routerLink="/dashboard/default/forms/basic">Valider ma Commande</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>

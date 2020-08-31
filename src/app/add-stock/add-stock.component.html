@@ -1,0 +1,43 @@
+<form #myFormc="ngForm" (ngSubmit)="save()">
+    <div class="modal-header">
+        <h4 class="modal-title text-center" id="modal-basic-title">AJOUTER LE STOCK</h4>
+        <button type="button" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+            <i class="fa fa-window-close" aria-hidden="true"></i>
+     </button>
+    </div>
+    <div class="modal-body">
+        <div class="row ">
+            <div class="col-sm-6 ">
+                <div class="form-group ">
+                    <label for="quantiteStock ">Quantite en Stock</label>
+                    <input [(ngModel)]="stock.quantiteStock " name="quantiteStock " id="quantiteStock " class="form-control " type="text " placeholder="Quantite en Stock ">
+                </div>
+            </div>
+            <div class="col-sm-6 ">
+                <div class="form-group ">
+                    <label for="quantiteSeuil ">Quantite Seuil</label>
+                    <input [(ngModel)]="stock.quantiteSeuil " name="quantiteSeuil " id="quantiteSeuil " class="form-control " type="text " placeholder="Quantite Seuil ">
+                </div>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-sm-6 ">
+                <div class="form-group ">
+                    <label for="prixUnitaire ">Prix Unitaire </label>
+                    <input [(ngModel)]="stock.prixUnitaire " name="prixUnitaire " id="prixUnitaire " class="form-control " type="text " placeholder="Prix Unitaire ">
+                </div>
+            </div>
+            <div class="col-sm-6 ">
+                <div class="form-group ">
+                    <label for="produit ">Produit</label>
+                    <select #mySelect required="required " [(ngModel)]="stock.id_produit " class="form-control " name="produit " id="produit">
+                              <option *ngFor='let p of produits' value="{{p.id}} ">{{p.libelle}}</option>
+                          </select>
+                </div>
+            </div>
+        </div>
+        <div class="form-group ">
+            <input type="submit" [disabled]="!myFormc.form.valid" class="form-control btn btn-primary " value="Enregistrer ">
+        </div>
+    </div>
+</form>

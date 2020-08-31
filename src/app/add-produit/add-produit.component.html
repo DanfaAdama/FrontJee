@@ -1,0 +1,79 @@
+<form #myForm="ngForm" (ngSubmit)="save()">
+    <div class="modal-header">
+        <h4 class="modal-title text-center" id="modal-basic-title">AJOUTER UN PRODUIT</h4>
+        <button type="button" (click)="activeModal.dismiss('Cross click')">
+            <i class="fa fa-window-close" aria-hidden="true"></i>
+     </button>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="libelle">Libelle</label>
+                    <input [(ngModel)]="produit.libelle" name=" libelle " id="libelle " class="form-control " type="text " placeholder="libelle ">
+                </div>
+            </div>
+            <div class="col-sm-6 ">
+                <div class="form-group ">
+                    <label for="etat ">Etat</label>
+                    <input [(ngModel)]="produit.etat " required="true " name="etat " id="nom " class="form-control " type="text " placeholder="Etat du produit ">
+                </div>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-sm-6 ">
+                <div class="form-group ">
+                    <label for="prixnormal ">Prix Normal</label>
+                    <input [(ngModel)]="produit.prixNormal " name="prixnormal " id="prixnormal " class="form-control " type="text " placeholder="Prix Normal ">
+                </div>
+            </div>
+            <div class="col-sm-6 ">
+                <div class="form-group ">
+                    <label for="prixPromotion ">Prix Promotion</label>
+                    <input [(ngModel)]="produit.prixPromotion " name="prixPromotion" id="prixPromotion" class="form-control " type="text " placeholder="Prix Promotion ">
+                </div>
+            </div>
+        </div>
+        <!-- <div class="row ">
+            <div class="col-sm-12">
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="file" (change)="handleFileInput($event.target.files)">
+                    <label class="custom-file-label" for="file">Selectionner un fichiers</label>
+                </div>
+            </div>
+        </div> -->
+        <div class="row">
+            <div class="col-sm-6 center-block">
+                <div class="fileupload fileupload-new admin-form" data-provides="fileupload">
+                    <div class="fileupload-preview thumbnail mb5">
+                        <img [src]="this.produit.photoName?sanitizer.bypassSecurityTrustUrl(this.produit.photoName):avatar" style="height: 120px;width: 120px; border-radius: 50%;border-left:50%;" />
+                    </div>
+                    <span class="button btn-system btn-file btn-block ph5">
+                  <span class="fileupload-new">Ajouter Photo</span>
+                    <!-- <span class="fileupload-exists">Changer Photo</span> -->
+                    <input type="file" id="file_document1" (change)="onImageChange($event)" accept="image/*" />
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-sm-12 ">
+                <div class="form-group ">
+                    <label for="categorie">Categorie</label>
+                    <select #mySelect required="required " [(ngModel)]="produit.id_categorie" class="form-control " name="categorie " id="categorie">
+                            <option *ngFor='let c of categories' value="{{c.id}}">{{c.libelle}}</option>
+                    </select>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row ">
+            <div class="col-sm-12 ">
+                <div class="form-group ">
+                    <input type="submit" [disabled]="!myForm.form.valid " class="btn btn-primary " value="Enregistrer ">
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

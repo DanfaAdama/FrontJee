@@ -1,0 +1,86 @@
+<form #myFormupdate="ngForm">
+    <div class="modal-header">
+        <h4 class="modal-title text-center" id="modal-basic-title">MISE A JOUR UTILISATEUR</h4>
+        <button type="button" (click)="activeModal.dismiss('Cross click')">
+            <i class="fa fa-window-close" aria-hidden="true"></i>
+     </button>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="name ">Nom</label>
+                    <input [(ngModel)]="custumer.name " name="name " id="name " class="form-control " type="text " placeholder="Nom ">
+                </div>
+            </div>
+            <div class="col-sm-6 ">
+                <div class="form-group ">
+                    <label for="prenom ">Prenom</label>
+                    <input [(ngModel)]="custumer.prenom " name="prenom " id="prenom " class="form-control " type="text " placeholder="Prenom ">
+                </div>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-sm-6 ">
+                <div class="form-group ">
+                    <label for="tel ">Telephone </label>
+                    <input [(ngModel)]="custumer.tel " name="tel " id="tel " class="form-control " type="text " placeholder="telephone ">
+                </div>
+            </div>
+            <div class="col-sm-6 ">
+                <div class="form-group ">
+                    <label for="adresse ">Adresse </label>
+                    <input [(ngModel)]="custumer.adresse " name="adresse " id="adresse " class="form-control " type="text " placeholder="Adresse ">
+                </div>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-sm-6 ">
+                <div class="form-group ">
+                    <label for="email ">E-Mail </label>
+                    <input [(ngModel)]="custumer.email " name="email " id="email " class="form-control " type="email " placeholder="E-mail ">
+                </div>
+            </div>
+            <div class="col-sm-6 ">
+                <div class="form-group ">
+                    <label for="datenaissance ">Date de Naissance </label>
+                    <input [(ngModel)]="custumer.datenaissance " name="datenaissance " id="datenaissance " class="form-control " type="text " placeholder="Date de Naissance ">
+                </div>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-sm-6 ">
+                <div class="form-group ">
+                    <label for="cni ">CNI </label>
+                    <input [(ngModel)]="custumer.cni " name="cni " id="cni " class="form-control " type="text " placeholder="CNI">
+                </div>
+            </div>
+            <div class="col-sm-6 ">
+                <div class="form-group ">
+                    <label for="code ">Username </label>
+                    <input [(ngModel)]="custumer.username " name="username" id="username " class="form-control " type="text " placeholder="Username">
+                </div>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-sm-6 ">
+                <div class="form-group ">
+                    <label for="sexe ">Sexe</label>
+                    <input [(ngModel)]="custumer.sexe " name="sexe " id="sexe " class="form-control " type="text " placeholder="Sexe">
+                </div>
+            </div>
+            <div class="col-sm-6 ">
+                <div class="form-group ">
+                    <label for="role ">Role</label>
+                    <input readonly="readonly" [(ngModel)]="custumer.role.name" required="true" name="role" id="role" class="form-control" type="text" placeholder="Role">
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <input type="button" [disabled]="!myFormupdate.form.valid" class="form-control btn btn-primary" (click)="update()" value="Modifier">
+        </div>
+    </div>
+</form>

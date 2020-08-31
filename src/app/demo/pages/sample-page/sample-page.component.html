@@ -1,0 +1,86 @@
+<div class="row">
+    <div class="col-xl-12">
+        <app-card cardTitle=" LES UTILISATEURS" cardClass="latest-update-card">
+            <button (click)="laodCustumers()" class='btn btn-primary btn-sm'> <i class="fa fa-plus"></i></button>
+            <div class="table-responsive">
+                <table class="table table-hover mb-0">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>NOM</th>
+                            <th>PRENOM </th>
+                            <th>TELEPHONE</th>
+                            <th>ADRESSE</th>
+                            <th>EMAIL</th>
+                            <th>DATE DE NAISSANCE</th>
+                            <th>CNI</th>
+                            <th>USERNAME</th>
+                            <th>SEXE</th>
+                            <th>ROLE</th>
+                            <th>ACTION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor='let d of data'>
+                            <td>{{d.id}}</td>
+                            <td>{{d.name}}</td>
+                            <td>{{d.prenom}}</td>
+                            <td>{{d.tel}}</td>
+                            <td>{{d.adresse}}</td>
+                            <td>{{d.email}}</td>
+                            <td>{{d.datenaissance | date: 'yyyy-MM-dd'}}</td>
+                            <td>{{d.cni}}</td>
+                            <td>{{d.username}}</td>
+                            <td>{{d.sexe}}</td>
+                            <td>{{d.role.name}}</td>
+                            <td><button (click)="openuser(d)" class='btn btn-primary btn-sm'> <i class="fa fa-edit"></i></button> &nbsp; &nbsp;
+                                <button (click)="deleteUser(d?.id,deleteUsers)" class='btn btn-danger btn-sm'><i class="feather icon-slash"></i></button></td>
+
+
+                        </tr>
+                    </tbody>
+                    <!-- <ngb-pagination [collectionSize]="70" [(page)]="noDirectionPage" [directionLinks]="false"></ngb-pagination> -->
+
+                </table>
+                <!-- <div class="horizontal-scroll">
+                    <ngb-pagination [collectionSize]="70" [(page)]="advancePage" [maxSize]="5" [rotate]="true" [ellipses]="false" [boundaryLinks]="true"></ngb-pagination>
+                </div> -->
+
+                <div class="col-sm-12">
+                    <p>Restricted size with rotation and no ellipses:</p>
+                    <ngb-pagination [collectionSize]="120" [(page)]="page" [maxSize]="5" [rotate]="true" [ellipses]="false" [boundaryLinks]="true"></ngb-pagination>
+
+                    <hr>
+
+                    <pre>Current page: {{page}}</pre>
+
+                </div>
+            </div>
+        </app-card>
+    </div>
+
+</div>
+
+<ng-template #deleteUsers>
+    <form #myForm2="ngForm">
+        <div class="modal-header">
+            <h4 class="modal-title text-center" id="modal-basic-title">SUPPRIMER UN UTILISATEUR</h4>
+            <button type="button" class="close" aria-label="Close" (click)="this.modalUsers.close()">
+          <span aria-hidden="true">&times;</span>
+     </button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <p>Voulez-vous supprimer?</p>
+
+            </div>
+
+            <div class="form-group">
+                <input type="button" [disabled]="!myForm2.form.valid" class="form-control btn btn-primary" (click)="delete()" value="Supprimer">
+            </div>
+        </div>
+    </form>
+</ng-template>
+
+<!-- <ng-select [items]="items" bindLabel="name" -placeholder="Selectionner">
+</ng-select> -->

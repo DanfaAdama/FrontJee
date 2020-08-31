@@ -1,0 +1,44 @@
+<form #myFormupdatestock="ngForm">
+    <div class="modal-header">
+        <h4 class="modal-title text-center" id="modal-basic-title">MISE A JOUR STOCK</h4>
+        <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+          <span aria-hidden="true">&times;</span>
+     </button>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="quantiteStock">Quantite en Stock</label>
+
+                    <input [(ngModel)]="datastocks.quantiteStock" name=" quantiteStock " id="quantiteStock " class="form-control " type="text " placeholder="Quantite en Stock  ">
+                </div>
+            </div>
+            <div class="col-sm-6 ">
+                <div class="form-group ">
+                    <label for="quantiteSeuil ">Quantite Seuil</label>
+                    <input [(ngModel)]="datastocks.quantiteSeuil " name="quantiteSeuil " id="quantiteSeuil " class="form-control " type="text " placeholder="Quantite Seuil ">
+                </div>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-sm-6 ">
+                <div class="form-group ">
+                    <label for="prixUnitaire ">Prix Unitaire </label>
+                    <input [(ngModel)]="datastocks.prixUnitaire " name="prixUnitaire " id="prixUnitaire " class="form-control " type="text " placeholder="Prix Unitaire ">
+                </div>
+            </div>
+            <div class="col-sm-12 ">
+                <div class="form-group ">
+                    <label for="produit ">Produit</label>
+                    <input readonly="readonly" [(ngModel)]="datastocks.produit.libelle" required="true" name="produit" id="produit" class="form-control" type="text" placeholder="Produit">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <input type="button" [disabled]="!myFormupdatestock.form.valid" class="form-control btn btn-primary" (click)="update()" value="Modifier">
+        </div>
+    </div>
+</form>

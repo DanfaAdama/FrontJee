@@ -1,0 +1,51 @@
+<form #myFormupdate="ngForm">
+    <div class="modal-header">
+        <h4 class="modal-title text-center" id="modal-basic-title">MISE A JOUR PRODUIT</h4>
+        <button type="button" (click)="activeModal.dismiss('Cross click')">
+            <i class="fa fa-window-close" aria-hidden="true"></i>
+     </button>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="libelle">Libelle</label>
+                    <input [(ngModel)]="datas.libelle" name=" libelle " id="libelle " class="form-control " type="text " placeholder="libelle ">
+                </div>
+            </div>
+            <div class="col-sm-6 ">
+                <div class="form-group ">
+                    <label for="etat ">Etat</label>
+                    <input [(ngModel)]="datas.etat " required="true " name="etat " id="nom " class="form-control " type="text " placeholder="Etat du produit ">
+                </div>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-sm-6 ">
+                <div class="form-group ">
+                    <label for="prixnormal ">Prix Normal</label>
+                    <input [(ngModel)]="datas.prixNormal " name="prixnormal " id="prixnormal " class="form-control " type="text " placeholder="Prix Normal ">
+                </div>
+            </div>
+            <div class="col-sm-6 ">
+                <div class="form-group ">
+                    <label for="prixPromotion">Prix Promotion</label>
+                    <input [(ngModel)]="datas.prixPromotion" name="prixPromotion" id="prixPromotion " class="form-control " type="text " placeholder="Prix Promotion ">
+                </div>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-sm-12 ">
+                <div class="form-group ">
+                    <label for="categorie ">Categorie</label>
+                    <input readonly="readonly" [(ngModel)]="datas.categorie.libelle" required="true" name="categorie" id="categorie" class="form-control" type="text" placeholder="Categorie">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <input type="button" [disabled]="!myFormupdate.form.valid" class="form-control btn btn-primary" (click)="update()" value="Modifier">
+        </div>
+    </div>
+</form>

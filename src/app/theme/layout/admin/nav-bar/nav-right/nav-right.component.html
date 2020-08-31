@@ -1,0 +1,13 @@
+<ul class="navbar-nav ml-auto">
+    <li>
+        <div class="dropdown" ngbDropdown placement="auto">
+            <a ngbDropdownToggle href="javascript:">
+                <i class="fa fa-shopping-cart" routerLink="/dashboard/default/basic/toasts"></i>
+                <!-- <mat-icon>add_shopping_cart</mat-icon> -->
+                <span class="badge badge-pill badge-danger">{{shoppingCartItems.length}}</span>
+            </a>
+        </div>
+    </li>
+    <li class="list-inline-item"><a class="text-danger" (click)="logout()"><i class="fa fa-power-off"></i></a></li>
+
+</ul>

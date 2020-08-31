@@ -1,0 +1,23 @@
+<form #myForm="ngForm">
+    <div class="modal-header">
+        <h4 class="modal-title text-center" id="modal-basic-title">SUPPRIMER UN PRODUIT</h4>
+        <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss()">
+          <span aria-hidden="true">&times;</span>
+     </button>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="libelle">Libelle</label>
+                    <input [(ngModel)]="data.libelle" required="true" name="libelle" id="libelle" class="form-control" type="text" placeholder="libelle Categorie">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <input type="button" [disabled]="!myForm.form.valid" class="form-control btn btn-primary" (click)="deletep()" value="Supprimer">
+        </div>
+    </div>
+</form>

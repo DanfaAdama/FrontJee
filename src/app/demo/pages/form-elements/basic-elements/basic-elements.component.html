@@ -1,0 +1,93 @@
+<div class="row btn-page">
+    <div class="col-sm-8">
+        <app-card cardTitle="Ma commande" [options]="false">
+            <div class="table-responsive">
+                <table class="table table-hover mb-0">
+                    <thead>
+                        <tr>
+
+                            <th>PRODUIT</th>
+                            <th>DESIGNATION</th>
+                            <th>PRIX</th>
+                            <th>QUANTITE</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor='let d of buyProducts'>
+                            <td><img [src]="d.product.photoName?sanitizer.bypassSecurityTrustUrl(d.product.photoName):avatar" style="height: 40px;width: 40px; border-radius: 50%;" /> </td>
+                            <td>{{d.product.libelle}}</td>
+                            <td>{{d.product.prixNormal}}</td>
+                            <td>{{d.quantity}}</td>
+                            <td>{{d.quantity * d.product.prixNormal}} FCFA</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div *ngIf="buyProducts.length <= 0">
+                    <h4>
+                        Votre panier est vide!
+                    </h4>
+                </div>
+                <div>
+                    <li class="list-group-item "><b class="amount">Total Hors TVA & Livraison  </b>{{ getTotal() | async | number : '1.2-2'}} FCFA</li>
+                    <li class="list-group-item "><b> Montant Livraison:  </b> 2000 FCFA</li>
+                    <li class="list-group-item "><b> Montant TVA(18%):  </b>{{this.montantTva }} FCFA </li>
+                    <li class="list-group-item "><b> Total Commande:  </b>{{ this.TotalCommande | number : '1.2-2'}} FCFA </li>
+                </div>
+
+            </div>
+            <div class="col-sm-12">
+                <button class="btn btn-primary mb-2" routerLink="/dashboard/default/basic/toasts">Retour au panier</button>
+            </div>
+
+        </app-card>
+    </div>
+    <div class="col-sm-4">
+        <app-card cardTitle="Mes Informations" [options]="false">
+
+            <div class="card text-black-50">
+                <div class="card-body">
+                    <p class="card-text">
+
+                        <li class="list-group-item "><b>Nom & Prenom  </b>{{this.clientData.name}} {{this.clientData.prenom}}</li>
+                        <li class="list-group-item "><b>Tel:  </b>{{this.clientData.tel}}</li>
+                        <li class="list-group-item "><b>adresse:  </b>{{this.clientData.adresse}} </li>
+                        <li class="list-group-item "><b>email:  </b>{{this.clientData.email}} </li>
+                        <li class="list-group-item "><b>sexe:  </b>{{this.clientData.sexe}} </li>
+                    </p>
+                </div>
+
+            </div>
+
+
+        </app-card>
+    </div>
+    <div class="col-sm-12">
+        <app-card cardTitle="Paiement" [options]="false">
+
+            <div class="col-sm-12 ">
+                <div class="form-group ">
+                    <label for="paiement">Type de Paiement</label>
+                    <select class="form-control ">
+                        <option *ngFor='let c of TypePaiementTab' value="{{c.id}}">{{c.libelle}}</option>
+                </select>
+
+                </div>
+            </div>
+            <hr>
+            <div>
+                <ul>
+                    <li class="list-group-item "><b>Total Commande:  </b>{{ this.TotalCommande | number : '1.2-2'}} FCFA </li>
+
+                </ul>
+            </div>
+            <div class="row" *ngIf="buyProducts.length > 0">
+                <div class="col-sm-12">
+                    <button class="btn btn-primary mb-2" (click)="MakeCommande()">Valider ma Commande</button>
+                </div>
+
+            </div>
+        </app-card>
+    </div>
+
+</div>

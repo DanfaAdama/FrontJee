@@ -1,0 +1,633 @@
+<div class="row">
+    <!-- table card start -->
+    <div class="col-md-12 col-xl-4">
+        <app-card [hidHeader]="true" cardClass="flat-card" blockClass="p-0">
+            <div class="row-table">
+                <div class="col-sm-6 card-body br">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <i class="icon feather icon-eye text-c-green mb-1 d-block"></i>
+                        </div>
+                        <div class="col-sm-8 text-md-center">
+                            <h5>10k</h5>
+                            <span>Visitors</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 card-body">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <i class="icon feather icon-music text-c-red mb-1 d-block"></i>
+                        </div>
+                        <div class="col-sm-8 text-md-center">
+                            <h5>100%</h5>
+                            <span>Volume</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-table">
+                <div class="col-sm-6 card-body br">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <i class="icon feather icon-file-text text-c-blue mb-1 d-block"></i>
+                        </div>
+                        <div class="col-sm-8 text-md-center">
+                            <h5>2000 +</h5>
+                            <span>Files</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 card-body">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <i class="icon feather icon-mail text-c-yellow mb-1 d-block"></i>
+                        </div>
+                        <div class="col-sm-8 text-md-center">
+                            <h5>120</h5>
+                            <span>Mails</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </app-card>
+        <app-card [hidHeader]="true" blockClass="p-0" cardClass="flat-card widget-primary-card">
+            <div class="row-table">
+                <div class="col-sm-3 card-body">
+                    <i class="feather icon-star-on"></i>
+                </div>
+                <div class="col-sm-9">
+                    <h4>4000 +</h4>
+                    <h6>Ratings Received</h6>
+                </div>
+            </div>
+        </app-card>
+    </div>
+    <div class="col-md-12 col-xl-4">
+        <app-card [hidHeader]="true" cardClass="flat-card" blockClass="p-0">
+            <div class="row-table">
+                <div class="col-sm-6 card-body br">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <i class="icon feather icon-share-2 text-c-blue mb-1 d-block"></i>
+                        </div>
+                        <div class="col-sm-8 text-md-center">
+                            <h5>1000</h5>
+                            <span>Shares</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 card-body">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <i class="icon feather icon-wifi text-c-blue mb-1 d-block"></i>
+                        </div>
+                        <div class="col-sm-8 text-md-center">
+                            <h5>600</h5>
+                            <span>Network</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-table">
+                <div class="col-sm-6 card-body br">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <i class="icon feather icon-rotate-ccw text-c-blue mb-1 d-block"></i>
+                        </div>
+                        <div class="col-sm-8 text-md-center">
+                            <h5>3550</h5>
+                            <span>Returns</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 card-body">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <i class="icon feather icon-shopping-cart text-c-blue mb-1 d-blockz"></i>
+                        </div>
+                        <div class="col-sm-8 text-md-center">
+                            <h5>100%</h5>
+                            <span>Order</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </app-card>
+        <app-card [hidHeader]="true" blockClass="p-0" cardClass="flat-card widget-purple-card">
+            <div class="row-table">
+                <div class="col-sm-3 card-body">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <div class="col-sm-9">
+                    <h4>17</h4>
+                    <h6>Achievements</h6>
+                </div>
+            </div>
+        </app-card>
+    </div>
+    <div class="col-md-12 col-xl-4">
+        <app-card [hidHeader]="true" cardClass="support-bar overflow-hidden" blockClass="p-0" [isCardFooter]="true" footerClass="bg-primary text-white">
+            <div class="p-20 pb-0">
+                <h2 class="m-0">350</h2>
+                <span class="text-c-blue">Support Requests</span>
+                <p class="mb-3 mt-3">Total number of support requests that come in.</p>
+            </div>
+            <app-apex-chart chartID="support-chart-1" [chartConfig]="this.supportChartData1"></app-apex-chart>
+            <div class="app-card-footer">
+                <div class="row text-center">
+                    <div class="col">
+                        <h4 class="m-0 text-white">10</h4>
+                        <span>Open</span>
+                    </div>
+                    <div class="col">
+                        <h4 class="m-0 text-white">5</h4>
+                        <span>Running</span>
+                    </div>
+                    <div class="col">
+                        <h4 class="m-0 text-white">3</h4>
+                        <span>Solved</span>
+                    </div>
+                </div>
+            </div>
+        </app-card>
+    </div>
+    <!-- table card end -->
+    <div class="col-xl-10">
+        <app-card cardTitle="NOS CATEGORIES" cardClass="table-card" blockClass="p-0">
+            <button (click)="laodForm()" class='btn btn-primary btn-sm'> <i class="fa fa-plus"></i></button>
+            <div class="table-responsive">
+                <table datatable class="table table-hover mb-0">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>LIBELLE</th>
+                            <th>ACTION</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngIf="data?.length != 0">
+                        <tr *ngFor='let d of data'>
+                            <td>{{d.id}}</td>
+                            <td>{{d.libelle}}</td>
+                            <td><button (click)="open(d)" class='btn btn-primary btn-sm'><i class="fa fa-edit"></i></button> &nbsp; &nbsp;
+                                <button (click)="deleteModal(d?.id,deleteCategorie)" class='btn btn-danger btn-sm'><i class="feather icon-slash"></i></button></td>
+
+
+                        </tr>
+                    </tbody>
+                    <tbody *ngIf="data?.length == 0">
+                        <tr>
+                            <td colspan="3" class="no-data-available">No data!</td>
+                        </tr>
+                        <tbody>
+                </table>
+                <!-- <div class="col-sm-12">
+                    <p>Restricted size with rotation and no ellipses:</p>
+                    <ngb-pagination [collectionSize]="120" [(page)]="page" [maxSize]="5" [rotate]="true" [ellipses]="false" [boundaryLinks]="true"></ngb-pagination>
+
+                    <hr>
+
+                    <pre>Current page: {{page}}</pre>
+
+                </div> -->
+            </div>
+
+        </app-card>
+    </div>
+    <!-- table card end -->
+
+    <!-- project and team member start -->
+    <!-- <div class="col-xl-6 col-md-12">
+      
+    </div> -->
+    <div class="col-xl-12">
+        <app-card cardTitle="NOS PRODUITS" cardClass="latest-update-card">
+            <button (click)="laodProduit()" class='btn btn-primary btn-sm'> <i class="fa fa-plus"></i></button>
+            <div class="table-responsive">
+                <table class="table table-hover mb-0">
+                    <thead>
+                        <tr>
+
+                            <th>ID</th>
+                            <th>LIBELLE</th>
+                            <th>ETAT</th>
+                            <th>PRIX NORMAL</th>
+                            <th>PRIX PROMOTION</th>
+                            <th>PHOTO</th>
+                            <th>CATEGORIE</th>
+                            <th>ACTION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor='let f of datas'>
+                            <td>{{f.id}}</td>
+                            <td>{{f.libelle}}</td>
+                            <td>{{f.etat}}</td>
+                            <td>{{f.prixNormal}}</td>
+                            <td>{{f.prixPromotion!= f.prixNormal ?f.prixPromotion:0}}</td>
+                            <td><img [src]="f.photoName?sanitizer.bypassSecurityTrustUrl(f.photoName):avatar" style="height: 40px;width: 40px; border-radius: 50%;" /> </td>
+                            <!-- <td><img [src]="f.photoName!=null?sanitizer.bypassSecurityTrustUrl(f.photoName):avatar" style="height: 40px;width: 40px; border-radius: 50%;" /></td> -->
+                            <td>{{f.categorie.libelle}}</td>
+                            <td><button (click)="openproduct(f)" class='btn btn-primary btn-sm'><i class="fa fa-edit"></i></button> &nbsp; &nbsp;
+                                <button (click)="deleteModalproduct(f?.id,deleteProduits)" class='btn btn-danger btn-sm'><i class="feather icon-slash"></i></button></td>
+
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </app-card>
+    </div>
+
+    <div class="col-xl-12">
+        <app-card cardTitle="NOS STOCKS" cardClass="latest-update-card">
+            <button (click)="laodStocks()" class='btn btn-primary btn-sm'> <i class="fa fa-plus"></i></button>
+            <div class="table-responsive">
+                <table class="table table-hover mb-0">
+                    <thead>
+                        <tr>
+
+                            <th>ID</th>
+                            <th>QUANTITE STOCK</th>
+                            <th>QUANTITE SEUIL</th>
+                            <th>PRIX UNITAIRE</th>
+                            <th>PRODUIT</th>
+                            <th>ACTION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor='let s of datastocks'>
+                            <td>{{s.id}}</td>
+                            <td>{{s.quantiteStock}}</td>
+                            <td>{{s.quantiteSeuil}}</td>
+                            <td>{{s.prixUnitaire}}</td>
+                            <td>{{s.produit.libelle}}</td>
+                            <td><button (click)="openpstock(s)" class='btn btn-primary btn-sm'><i class="fa fa-edit"></i></button> &nbsp; &nbsp;
+                                <button (click)="deleteModalStock(s?.id,deleteStocks)" class='btn btn-danger btn-sm'><i class="feather icon-slash"></i></button></td>
+
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </app-card>
+    </div>
+    <!-- project and team member end -->
+
+    <!-- seo start -->
+    <!-- <div class="col-xl-4 col-md-12">
+    <app-card [hidHeader]="true">
+      <div class="row align-items-center">
+        <div class="col-6">
+          <h3>$16,756</h3>
+          <h6 class="text-muted m-b-0">Visits<i class="fa fa-caret-down text-c-red m-l-10"></i></h6>
+        </div>
+        <div class="col-6">
+          <app-apex-chart chartID="seo-chart-1" [chartConfig]="this.seoChartData1"></app-apex-chart>
+        </div>
+      </div>
+    </app-card>
+  </div>
+  <div class="col-xl-4 col-md-6">
+    <app-card [hidHeader]="true">
+      <div class="row align-items-center">
+        <div class="col-6">
+          <h3>49.54%</h3>
+          <h6 class="text-muted m-b-0">Bounce Rate<i class="fa fa-caret-up text-c-green m-l-10"></i></h6>
+        </div>
+        <div class="col-6">
+          <app-apex-chart chartID="seo-chart-2" [chartConfig]="this.seoChartData2"></app-apex-chart>
+        </div>
+      </div>
+    </app-card>
+  </div>
+  <div class="col-xl-4 col-md-6">
+    <app-card [hidHeader]="true">
+      <div class="row align-items-center">
+        <div class="col-6">
+          <h3>1,62,564</h3>
+          <h6 class="text-muted m-b-0">Products<i class="fa fa-caret-down text-c-red m-l-10"></i></h6>
+        </div>
+        <div class="col-6">
+          <app-apex-chart chartID="seo-chart-3" [chartConfig]="this.seoChartData3"></app-apex-chart>
+        </div>
+      </div>
+    </app-card>
+  </div> -->
+    <!-- seo end -->
+
+    <!-- latest customers start -->
+    <!-- <div class="col-lg-8 col-md-12">
+        <app-card cardTitle="Customer Reviews" headerClass="borderless" cardClass="table-card review-card">
+            <div class="review-block">
+                <div class="row">
+                    <div class="col-sm-auto p-r-0">
+                        <img src="assets/images/user/avatar-2.jpg" alt="user image" class="img-radius profile-img cust-img m-b-15">
+                    </div>
+                    <div class="col">
+                        <h6 class="m-b-15">John Deo <span class="float-right f-13 text-muted"> a week ago</span></h6>
+                        <a href="javascript:"><i class="feather icon-star-on f-18 text-c-yellow"></i></a>
+                        <a href="javascript:"><i class="feather icon-star-on f-18 text-c-yellow"></i></a>
+                        <a href="javascript:"><i class="feather icon-star-on f-18 text-c-yellow"></i></a>
+                        <a href="javascript:"><i class="feather icon-star f-18 text-muted"></i></a>
+                        <a href="javascript:"><i class="feather icon-star f-18 text-muted"></i></a>
+                        <p class="m-t-15 m-b-15 text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+                            specimen book.</p>
+                        <a href="javascript:" class="m-r-30 text-muted"><i class="feather icon-thumbs-up m-r-15"></i>Helpful?</a>
+                        <a href="javascript:"><i class="feather icon-heart-on text-c-red m-r-15"></i></a>
+                        <a href="javascript:"><i class="feather icon-edit text-muted"></i></a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-auto p-r-0">
+                        <img src="assets/images/user/avatar-4.jpg" alt="user image" class="img-radius profile-img cust-img m-b-15">
+                    </div>
+                    <div class="col">
+                        <h6 class="m-b-15">Allina D’croze <span class="float-right f-13 text-muted"> a week ago</span></h6>
+                        <a href="javascript:"><i class="feather icon-star-on f-18 text-c-yellow"></i></a>
+                        <a href="javascript:"><i class="feather icon-star f-18 text-muted"></i></a>
+                        <a href="javascript:"><i class="feather icon-star f-18 text-muted"></i></a>
+                        <a href="javascript:"><i class="feather icon-star f-18 text-muted"></i></a>
+                        <a href="javascript:"><i class="feather icon-star f-18 text-muted"></i></a>
+                        <p class="m-t-15 m-b-15 text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+                            specimen book.</p>
+                        <a href="javascript:" class="m-r-30 text-muted"><i class="feather icon-thumbs-up m-r-15"></i>Helpful?</a>
+                        <a href="javascript:"><i class="feather icon-heart-on text-c-red m-r-15"></i></a>
+                        <a href="javascript:"><i class="feather icon-edit text-muted"></i></a>
+                        <blockquote class="blockquote m-t-15 m-b-0">
+                            <h6>Allina D’croze</h6>
+                            <p class="m-b-0 text-muted">Lorem Ipsum is simply dummy text of the industry.</p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <div class="text-right  m-r-20">
+                <a href="javascript:" class="b-b-primary text-primary">View all Customer Reviews</a>
+            </div>
+        </app-card>
+        <div class="row">
+            <div class="col-sm-6">
+                <app-card [hidHeader]="true">
+                    <h5 class="mb-3">Power</h5>
+                    <h2>2789<span class="text-muted m-l-5 f-14">kw</span></h2>
+                    <app-apex-chart chartID="power-card-chart-1" [chartConfig]="this.powerCardChartData1"></app-apex-chart>
+                    <div class="row">
+                        <div class="col col-auto">
+                            <div class="map-area">
+                                <h6 class="m-0">2876 <span> kw</span></h6>
+                                <p class="text-muted m-0">month</p>
+                            </div>
+                        </div>
+                        <div class="col col-auto">
+                            <div class="map-area">
+                                <h6 class="m-0">234 <span> kw</span></h6>
+                                <p class="text-muted m-0">Today</p>
+                            </div>
+                        </div>
+                    </div>
+                </app-card>
+            </div>
+            <div class="col-sm-6">
+                <app-card [hidHeader]="true">
+                    <h5 class="mb-3">Temperature</h5>
+                    <h2>7.3<span class="text-muted m-l-10 f-14">deg</span></h2>
+                    <app-apex-chart chartID="power-card-chart-2" [chartConfig]="this.powerCardChartData2"></app-apex-chart>
+                    <div class="row">
+                        <div class="col col-auto">
+                            <div class="map-area">
+                                <h6 class="m-0">4.5 <span> deg</span></h6>
+                                <p class="text-muted m-0">month</p>
+                            </div>
+                        </div>
+                        <div class="col col-auto">
+                            <div class="map-area">
+                                <h6 class="m-0">0.5 <span> deg</span></h6>
+                                <p class="text-muted m-0">Today</p>
+                            </div>
+                        </div>
+                    </div>
+                </app-card>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-12">
+        <app-card cardTitle="Chat" cardClass="chat-card">
+            <div class="row m-b-20 m-t-20 received-chat">
+                <div class="col-auto p-r-0">
+                    <img src="assets/images/user/avatar-2.jpg" alt="user image" class="img-radius wid-40">
+                </div>
+                <div class="col">
+                    <div class="msg">
+                        <p class="m-b-0">Nice to meet you!</p>
+                    </div>
+                    <p class="text-muted m-b-0"><i class="fa fa-clock-o m-r-10"></i>10:20am</p>
+                </div>
+            </div>
+            <div class="row m-b-20 send-chat">
+                <div class="col">
+                    <div class="msg">
+                        <p class="m-b-0">Nice to meet you!</p>
+                    </div>
+                    <p class="text-muted m-b-0"><i class="fa fa-clock-o m-r-10"></i>10:20am</p>
+                </div>
+                <div class="col-auto p-l-0">
+                    <img src="assets/images/user/avatar-3.jpg" alt="user image" class="img-radius wid-40">
+                </div>
+            </div>
+            <div class="row m-b-20 received-chat">
+                <div class="col-auto p-r-0">
+                    <img src="assets/images/user/avatar-2.jpg" alt="user image" class="img-radius wid-40">
+                </div>
+                <div class="col">
+                    <div class="msg">
+                        <p class="m-b-0">Nice to meet you!</p>
+                        <img src="assets/images/widget/dashborad-1.jpg" alt="">
+                        <img src="assets/images/widget/dashborad-3.jpg" alt="">
+                    </div>
+                    <p class="text-muted m-b-0"><i class="fa fa-clock-o m-r-10"></i>10:20am</p>
+                </div>
+            </div>
+            <div class="form-group m-t-15">
+                <div class="input-group m-t-15">
+                    <input type="text" name="task-insert" class="form-control" id="Project" placeholder="Send message">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary">
+              <i class="feather icon-message-circle"></i>
+            </button>
+                    </div>
+                </div>
+            </div>
+        </app-card>
+        <div class="row">
+            <div class="col-md-6">
+                <app-card [hidHeader]="true" [isCardFooter]="true" footerClass="bg-c-yellow">
+                    <div class="row align-items-center">
+                        <div class="col-8">
+                            <h4 class="text-c-yellow">$30200</h4>
+                            <h6 class="text-muted m-b-0">All Earnings</h6>
+                        </div>
+                        <div class="col-4 text-right">
+                            <i class="feather icon-bar-chart-2 f-28"></i>
+                        </div>
+                    </div>
+                    <div class="app-card-footer">
+                        <div class="row align-items-center">
+                            <div class="col-9">
+                                <p class="text-white m-b-0">% change</p>
+                            </div>
+                            <div class="col-3 text-right">
+                                <i class="feather icon-trending-up text-white f-16"></i>
+                            </div>
+                        </div>
+                    </div>
+                </app-card>
+            </div>
+            <div class="col-md-6">
+                <app-card [hidHeader]="true" [isCardFooter]="true" footerClass="bg-c-green">
+                    <div class="row align-items-center">
+                        <div class="col-8">
+                            <h4 class="text-c-green">290+</h4>
+                            <h6 class="text-muted m-b-0">Page Views</h6>
+                        </div>
+                        <div class="col-4 text-right">
+                            <i class="feather icon-file-text f-28"></i>
+                        </div>
+                    </div>
+                    <div class="app-card-footer">
+                        <div class="row align-items-center">
+                            <div class="col-9">
+                                <p class="text-white m-b-0">% change</p>
+                            </div>
+                            <div class="col-3 text-right">
+                                <i class="feather icon-trending-up text-white f-16"></i>
+                            </div>
+                        </div>
+                    </div>
+                </app-card>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <app-card [hidHeader]="true" [isCardFooter]="true" footerClass="bg-c-red">
+                    <div class="row align-items-center">
+                        <div class="col-8">
+                            <h4 class="text-c-red">145</h4>
+                            <h6 class="text-muted m-b-0">Task</h6>
+                        </div>
+                        <div class="col-4 text-right">
+                            <i class="feather icon-calendar f-28"></i>
+                        </div>
+                    </div>
+                    <div class="app-card-footer">
+                        <div class="row align-items-center">
+                            <div class="col-9">
+                                <p class="text-white m-b-0">% change</p>
+                            </div>
+                            <div class="col-3 text-right">
+                                <i class="feather icon-trending-down text-white f-16"></i>
+                            </div>
+                        </div>
+                    </div>
+                </app-card>
+            </div>
+            <div class="col-md-6">
+                <app-card [hidHeader]="true" [isCardFooter]="true" footerClass="bg-c-blue">
+                    <div class="row align-items-center">
+                        <div class="col-8">
+                            <h4 class="text-c-blue">500</h4>
+                            <h6 class="text-muted m-b-0">Downloads</h6>
+                        </div>
+                        <div class="col-4 text-right">
+                            <i class="feather icon-thumbs-down f-28"></i>
+                        </div>
+                    </div>
+                    <div class="app-card-footer">
+                        <div class="row align-items-center">
+                            <div class="col-9">
+                                <p class="text-white m-b-0">% change</p>
+                            </div>
+                            <div class="col-3 text-right">
+                                <i class="feather icon-trending-down text-white f-16"></i>
+                            </div>
+                        </div>
+                    </div>
+                </app-card>
+            </div>
+        </div>
+    </div> -->
+    <!-- latest customers end -->
+</div>
+
+
+<ng-template #deleteCategorie>
+    <form #myForm="ngForm">
+        <div class="modal-header">
+            <h4 class="modal-title text-center" id="modal-basic-title">SUPPRIMER UNE CATEGORIE</h4>
+            <button type="button" aria-label="Close" (click)="this.modalCateg.close()">
+            <i class="fa fa-window-close" aria-hidden="true"></i>
+     </button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <p>Voulez-vous vraiment supprimer cette Categorie?</p>
+
+            </div>
+
+            <div class="row ">
+                <div class="form-group">
+                    <div class="col-sm-6 ">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="this.modalCateg.close()">Annuler</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12 ">
+                        <input type="button" [disabled]="!myForm.form.valid" class="form-control btn btn-primary" (click)="delete()" value="Supprimer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</ng-template>
+
+<ng-template #deleteProduits>
+    <form #myForm1="ngForm">
+        <div class="modal-header">
+            <h4 class="modal-title text-center" id="modal-basic-title">SUPPRIMER UN PRODUIT</h4>
+            <button type="button" class="close" aria-label="Close" (click)="this.modalProd.close()">
+          <span aria-hidden="true">&times;</span>
+     </button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <p>Voulez-vous supprimer?</p>
+
+            </div>
+
+            <div class="form-group">
+                <input type="button" [disabled]="!myForm1.form.valid" class="form-control btn btn-primary" (click)="deletep()" value="Supprimer">
+            </div>
+        </div>
+    </form>
+</ng-template>
+
+<ng-template #deleteStocks>
+    <form #myForm2="ngForm">
+        <div class="modal-header">
+            <h4 class="modal-title text-center" id="modal-basic-title">SUPPRIMER UN STOCK</h4>
+            <button type="button" class="close" aria-label="Close" (click)="this.modalStock.close()">
+          <span aria-hidden="true">&times;</span>
+     </button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <p>Voulez-vous supprimer?</p>
+
+            </div>
+
+            <div class="form-group">
+                <input type="button" [disabled]="!myForm2.form.valid" class="form-control btn btn-primary" (click)="deletestock()" value="Supprimer">
+            </div>
+        </div>
+    </form>
+</ng-template>

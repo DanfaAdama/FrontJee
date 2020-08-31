@@ -1,0 +1,43 @@
+<form #myForm="ngForm">
+    <h5 class="text-primary">RECHERCHER UN PRODUIT PAR CATEGORIE</h5>
+    <div class="row">
+
+        <div class="col-sm-3 ">
+            <input [(ngModel)]="category" required="true" name="category" id="category" class="form-control" type="text" placeholder="Categorie">
+        </div>
+        <div class="col-sm-3 ">
+            <input type="button" [disabled]="!myForm.form.valid" class="form-control btn btn-primary" (click)="rechercher()" value="Rechercher">
+        </div>
+    </div>
+
+</form>
+
+<div class="col-xl-12">
+    <h5 class="mt-4 text-primary">PRODUITS DISPONIBLES</h5>
+    <hr>
+    <div class="row">
+        <div class="col-sm-4" *ngFor='let f of datas'>
+            <div class="card text-black-50">
+                <div class="card-header">
+
+                    <img [src]=" f.photoName?sanitizer.bypassSecurityTrustUrl(f.photoName):avatar " style="height: 120px;width: 180px; margin-left: 50px; margin-right: 50px; ">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title text-primary">{{f.libelle}}</h5>
+                    <p class="card-text">
+                        <li class="list-group-item "><b>PRIX:  </b>{{f.prixNormal}} XOF</li>
+                        <li class="list-group-item "><b>CATEGORIE:  </b>{{f.categorie.libelle}} </li>
+                    </p>
+                </div>
+                <div class="card-footer ">
+                    <div class="row ">
+                        <div class="col-xl-8">
+                            <button class="btn btn-primary" (click)="addToCart(f)">Ajouter au panier</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
