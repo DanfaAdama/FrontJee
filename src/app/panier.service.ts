@@ -20,7 +20,7 @@ export class PanierService {
 public cartItems  :  BehaviorSubject<CartItem[]> = new BehaviorSubject([]);
 public observer   :  Subscriber<{}>;
 
-  constructor(public snackBar: MatSnackBar) {
+  constructor(public snackBar: MatSnackBar ) {
     user = JSON.parse(localStorage.getItem('userConnected'));
     products  = user ? JSON.parse(localStorage.getItem("cartItem"+user.username)) || [] : [];
     this.cartItems.subscribe(

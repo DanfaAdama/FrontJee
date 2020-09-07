@@ -1,3 +1,4 @@
+import { CustumersService } from './../../../../../custumers.service';
 import { CartItem } from './../../../../../modele/PanierData';
 import { PanierService } from './../../../../../panier.service';
 import { Router } from '@angular/router';
@@ -5,6 +6,7 @@ import { AfterViewInit, Component, ElementRef, EventEmitter, NgZone, OnInit, Out
 import { NavigationItem } from '../navigation';
 import { NextConfig } from '../../../../../app-config';
 import { Location, NgLocalization } from '@angular/common';
+import { CustumerData } from 'src/app/modele/CustumerData';
 let user;
 @Component({
   selector: 'app-nav-content',
@@ -27,8 +29,12 @@ export class NavContentComponent implements OnInit, AfterViewInit {
   @ViewChild('navbarContent') navbarContent: ElementRef;
   @ViewChild('navbarWrapper') navbarWrapper: ElementRef;
   @Input() shoppingCartItems: CartItem[] = [];
+  user:any;
+  clientData: CustumerData = new CustumerData();
   
-  constructor(public nav: NavigationItem, private zone: NgZone, private location: Location, private router: Router,private panierService:PanierService) {
+  
+  constructor(public nav: NavigationItem, private zone: NgZone, private location: Location, private router: Router,private panierService:PanierService,
+    private custumerService: CustumersService) {
     this.flatConfig = NextConfig.config;
     this.windowWidth = window.innerWidth;
 
@@ -45,6 +51,11 @@ export class NavContentComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
+    this.user= localStorage.getItem('username');
+    this.custumerService.getUserByUsername(this.user).subscribe((data) => {
+    this.clientData=data
+    console.log('data',this.clientData);
+});
     
     if (this.windowWidth < 992) {
       this.flatConfig['layout'] = 'vertical';

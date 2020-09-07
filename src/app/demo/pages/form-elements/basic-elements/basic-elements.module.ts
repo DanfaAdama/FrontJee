@@ -15,6 +15,7 @@ import {NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
     SharedModule,
     NgbDropdownModule,
     BasicSpinnerRoutingModule,
+    
   ],
   declarations: [BasicElementsComponent]
 })

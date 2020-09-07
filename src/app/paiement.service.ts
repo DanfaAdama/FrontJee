@@ -10,14 +10,16 @@ export class PaiementService {
   private apiService = "http://localhost:8080";
 
   constructor(private http: HttpClient) { }
-  getFacture() {
+  getPaiement() {
     return this.http.get<any>(this.apiService + '/ressources/paiement/liste');
   }
-  saveOrUpdateFacture(paiement){
+  saveOrUpdatePaiement(paiement){
        return this.http.post<PaiemetData>(this.apiService + '/ressources/paiement/add', paiement);
   }
  
-deleteFacture(id){
+deletePaiement(id){
   return this.http.delete<PaiemetData>(this.apiService + '/ressources/paiement/delete/'+id);
 }
+
+
 }

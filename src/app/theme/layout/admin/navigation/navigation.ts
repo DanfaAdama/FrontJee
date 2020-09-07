@@ -48,15 +48,9 @@ const NavigationItemsAdmin = [
         children: [
           {
             id: 'vertical',
-            title: 'Commandes a validées',
+            title: 'Liste des Commandes',
             type: 'item',
-            url: '/layout/static'
-          },
-          {
-            id: 'horizontal',
-            title: 'Commandes  validées',
-            type: 'item',
-            url: '/layout/horizontal'
+            url: '/dashboard/default/basic/tabs-pills'
           }
         ]
       }
@@ -136,6 +130,12 @@ const NavigationItemsUser = [
             title: ' valider ma commande',
             type: 'item',
             url: '/dashboard/default/forms/basic'
+          },
+          {
+            id: 'signin',
+            title: 'Voire mes Commandes',
+            type: 'item',
+            url: '/dashboard/default/basic/cards'
           }
          
         ]

@@ -22,4 +22,9 @@ deleteFacture(id){
   return this.http.delete<FactureData>(this.apiService + '/ressources/factures/delete/'+id);
 }
 
+sendFacture(id){
+  return this.http.get(this.apiService + '/sendFactureByMail/'+id,{responseType:"text"});
+
 }
+
+}      

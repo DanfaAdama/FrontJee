@@ -1,6 +1,7 @@
 /**  =====================
       Authentication css start
 ==========================  **/
+
 .auth-wrapper {
     position: relative;
     display: flex;
@@ -10,7 +11,7 @@
     min-width: 100%;
     min-height: 100vh;
     background: $primary-color;
-    background-image: url("assets/images/auth/img-auth-big.jpg");
+    background-image: url("assets/img/avatars/back.jpg");
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -19,23 +20,20 @@
             max-width: 1140px;
         }
     }
-    @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @media (-ms-high-contrast: none),
+    (-ms-high-contrast: active) {
         display: block;
         margin: 0 auto;
-
-        > .row {
+        >.row {
             min-height: 100vh;
-
-            > .aut-bg-img {
+            >.aut-bg-img {
                 min-height: 100vh;
             }
         }
     }
-
     .saprator {
         position: relative;
         margin: 8px 0;
-
         span {
             background: #fff;
             position: relative;
@@ -43,7 +41,6 @@
             z-index: 5;
             font-size: 20px;
         }
-
         &:after {
             content: "";
             position: absolute;
@@ -55,51 +52,44 @@
             z-index: 1;
         }
     }
-
     a,
-    p > a {
+    p>a {
         color: $theme-heading-color;
         font-weight: 600;
     }
-
     .input-group {
         background: transparent;
     }
-
     .card {
         margin-bottom: 0;
         padding: 8px;
         border-radius: 8px;
-
         .card-body {
             padding: 20px 25px 20px 40px;
         }
-        @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        @media (-ms-high-contrast: none),
+        (-ms-high-contrast: active) {
             display: block;
         }
     }
-
-    > div {
+    >div {
         z-index: 5;
     }
-
     .auth-content {
         position: relative;
         padding: 15px;
         z-index: 5;
-
         &:not(.container) {
             width: 400px;
-
             .card-body {
                 padding: 40px 35px;
             }
         }
-        @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        @media (-ms-high-contrast: none),
+        (-ms-high-contrast: active) {
             margin: 0 auto;
         }
     }
-
     .auth-side-img {
         padding-right: 400px;
         position: absolute;
@@ -111,7 +101,6 @@
             display: none;
         }
     }
-
     .auth-side-form {
         position: relative;
         min-height: 100%;
@@ -120,21 +109,18 @@
         align-items: center;
         left: auto;
         float: right;
-
-        > * {
+        >* {
             position: relative;
             z-index: 5;
         }
         @media only screen and (max-width: 991px) {
             width: 100%;
             justify-content: center;
-
             .auth-content:not(.container) {
                 max-width: 350px;
             }
         }
     }
-
     &.aut-bg-img {
         .auth-side-form {
             @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
@@ -149,52 +135,51 @@
             }
         }
     }
-
     &.offline {
         background-image: none;
-
         h1 {
             font-size: 87px;
             font-weight: 700;
         }
-
         &:before {
             display: none;
         }
     }
-
     .card-body .carousel-indicators {
         margin: 15px 0 10px;
         bottom: 0;
-
         li {
             width: 50px;
             background-color: transparentize($primary-color, 0.6);
             border-radius: 5px;
             height: 4px;
-
             &.active {
                 background-color: $primary-color;
             }
         }
     }
-
     .img-logo-overlay {
         position: absolute;
         top: 40px;
         left: 50px;
     }
 }
+
+
 /* image varient start */
+
 .aut-bg-img {
-    background-image: url("assets/images/auth/img-auth-big.jpg");
+    background-image: url("assets/img/avatars/back.jpg");
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-
     .auth-content {
         padding: 70px 40px;
     }
 }
+
+
 /* image varient End */
+
+
 /**====== Authentication css end ======**/

@@ -14,6 +14,7 @@ constructor(
   public numero?: any,
   public paiement? :any,
   public commande? : any,
+  public date?:any,
  
 
 ){

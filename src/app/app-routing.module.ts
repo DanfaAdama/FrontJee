@@ -1,3 +1,4 @@
+import { BasicCardsComponent } from './demo/ui-elements/ui-basic/basic-cards/basic-cards.component';
 import { CustumersComponent } from './custumers/custumers.component';
 import { DashDefaultComponent } from './demo/dashboard/dash-default/dash-default.component';
 import { AccessDeniedComponent } from './access-denied/access-denied.component';
@@ -21,6 +22,11 @@ const routes: Routes = [
         loadChildren: () => import('./demo/pages/authentication/authentication.module').then(module => module.AuthenticationModule)
       }
     ]
+  },
+  {
+    path: 'boutique',
+    component:BasicCardsComponent,
+    loadChildren: () => import('./demo/ui-elements/ui-basic/ui-basic.module').then(module => module.UiBasicModule)
   },
   {
     path: 'dashboard',

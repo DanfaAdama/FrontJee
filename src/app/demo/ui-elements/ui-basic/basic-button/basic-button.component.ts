@@ -8,6 +8,7 @@ import { Component, OnInit, ChangeDetectorRef, ChangeDetectionStrategy, Input } 
 import { CategoryData } from 'src/app/modele/CategoryData';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { DomSanitizer } from '@angular/platform-browser';
+import {ToastService} from '../../../../theme/shared/components/toast/toast.service';
 
 @Component({
   selector: 'app-basic-button',
@@ -28,7 +29,8 @@ export class BasicButtonComponent implements OnInit {
   category:string;
   avatar = "assets/img/avatars/user.png";
   constructor(private categoryService: CategoryService,private modalService: NgbModal,private produitService:ProduitService,
-    private changeDetectorRef: ChangeDetectorRef,public sanitizer: DomSanitizer,private commandeService:CommandesService,private panierService:PanierService ) {
+    private changeDetectorRef: ChangeDetectorRef,public sanitizer: DomSanitizer,private commandeService:CommandesService,private panierService:PanierService ,
+    public toastEvent: ToastService) {
     this.radioButtons = '1';
     this.checkBox = {
       left: true,
@@ -104,17 +106,7 @@ export class BasicButtonComponent implements OnInit {
   public addToCart(product: ProduitData,  quantity: number = 1) {
     this.panierService.addToCart(product,quantity);
   }
-  // onOrder() {
-  //   this.commandeService.saveOrUpdateCommandes(this.commande).
-  //       subscribe(
-  //         res => {
-  //           this.getCommandes();
-  //           console.log(res);
-          
-  //         },
-  //         err => console.log(err)
-  //       );
-  // }
+
 
   
 

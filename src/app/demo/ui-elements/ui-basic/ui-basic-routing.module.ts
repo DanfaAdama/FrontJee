@@ -14,7 +14,7 @@ const routes: Routes = [
         loadChildren: () => import('./basic-button/basic-button.module').then(module => module.BasicButtonModule)
       },
       {
-        path: 'badges',
+        path: 'badges/:id',
         loadChildren: () => import('./basic-badge/basic-badge.module').then(module => module.BasicBadgeModule)
       },
       {

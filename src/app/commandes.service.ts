@@ -19,8 +19,6 @@ export class CommandesService {
     this.commande.user=client;
   }
 
-
-
 getCommande() {
   return this.http.get<any>(this.apiService + '/ressources/commandes/liste');
 }
@@ -30,5 +28,21 @@ saveOrUpdateCommandes(commande){
 deleteCommandes(id){
   return this.http.delete<CommandeData>(this.apiService + '/ressources/commandesdelete/'+id);
 }
+getClientLastCommande(idClient) {
+  return this.http.get(this.apiService  + '/ressources/commandes/last/' + idClient);
+}
 
+getAllCommandeClient(idClient) {
+  return this.http.get(this.apiService  + '/ressources/commandes/AllCommandes/' + idClient);
+}
+
+getOnById(id){
+  return this.http.get<any>(this.apiService + '/ressources/commandes/get/'+id);
+
+}
+
+updateAvance(id,newAvance){
+  return this.http.get<any>(this.apiService + '/ressources/commandes/UpdateAvanceCommande/'+id +'/'+newAvance);
+
+}
 }

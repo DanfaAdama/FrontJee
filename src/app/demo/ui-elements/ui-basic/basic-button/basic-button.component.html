@@ -17,6 +17,9 @@
     <hr>
     <div class="row">
         <div class="col-sm-4" *ngFor='let f of datas'>
+            <app-toast uID="toast6" toastTitle="Ajout Reussie" toastClass="m-b-10">
+                Produit ajouté au panier
+            </app-toast>
             <div class="card text-black-50">
                 <div class="card-header">
 
@@ -25,14 +28,19 @@
                 <div class="card-body">
                     <h5 class="card-title text-primary">{{f.libelle}}</h5>
                     <p class="card-text">
-                        <li class="list-group-item "><b>PRIX:  </b>{{f.prixNormal}} XOF</li>
+                        <li class="list-group-item "><b>PRIX:  </b>{{f.prixNormal | number : '1.2-2'}} FCFA</li>
                         <li class="list-group-item "><b>CATEGORIE:  </b>{{f.categorie.libelle}} </li>
                     </p>
                 </div>
                 <div class="card-footer ">
                     <div class="row ">
                         <div class="col-xl-8">
-                            <button class="btn btn-primary" (click)="addToCart(f)">Ajouter au panier</button>
+                            <!-- <button class="btn btn-primary" (click)="this.toastEvent.toast({uid: 'toast6', delay: 3000})">3 sec</button> -->
+
+                            <button class="btn btn-primary" (click)="addToCart(f); this.toastEvent.toast({uid: 'toast6', delay: 3000});">Ajouter au panier</button> &nbsp; &nbsp; &nbsp;
+                            <button class='btn btn-primary btn-sm'><i class="fas fa-eye"></i></button>
+
+
                         </div>
 
                     </div>

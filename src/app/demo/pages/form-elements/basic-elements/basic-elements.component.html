@@ -68,13 +68,21 @@
             <div class="col-sm-12 ">
                 <div class="form-group ">
                     <label for="paiement">Type de Paiement</label>
-                    <select class="form-control ">
+                    <select class="form-control " (click)="typePaiement($event.target.value)">
                         <option *ngFor='let c of TypePaiementTab' value="{{c.id}}">{{c.libelle}}</option>
                 </select>
 
                 </div>
             </div>
             <hr>
+            <div class="col-sm-12 ">
+                <div class="form-group" *ngIf="showPaiementType">
+                    <label for="etat ">Avance sur le Paiement</label>
+                    <input [(ngModel)]="avance" required="true " class="form-control " type="text " placeholder="Montant de l'avance ">
+                </div>
+
+            </div>
+
             <div>
                 <ul>
                     <li class="list-group-item "><b>Total Commande:  </b>{{ this.TotalCommande | number : '1.2-2'}} FCFA </li>
@@ -84,9 +92,12 @@
             <div class="row" *ngIf="buyProducts.length > 0">
                 <div class="col-sm-12">
                     <button class="btn btn-primary mb-2" (click)="MakeCommande()">Valider ma Commande</button>
+
                 </div>
 
             </div>
+            <!-- <button ejs-button #successToast cssClass='e-btn e-control e-success' id='successToast'
+            (click)="successClick()">Success Message</button> -->
         </app-card>
     </div>
 

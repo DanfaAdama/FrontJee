@@ -20,7 +20,8 @@ import { NgbButtonsModule, NgbDropdownModule, NgbTooltipModule, NgbPopoverModule
     ReactiveFormsModule,
     HttpClientModule,
     NgbTooltipModule,
-    NgbPopoverModule
+    NgbPopoverModule,
+    SharedModule,
   ],
   declarations: [BasicButtonComponent]
 })

@@ -1,70 +1,101 @@
 <div class="row btn-page">
-  <div class="col-sm-12">
-    <app-card cardTitle="Basic Badges" [options]="false">
-      <h1>Example heading <span class="badge badge-secondary">New</span></h1>
-      <h2>Example heading <span class="badge badge-secondary">New</span></h2>
-      <h3>Example heading <span class="badge badge-secondary">New</span></h3>
-      <h4>Example heading <span class="badge badge-secondary">New</span></h4>
-      <h5>Example heading <span class="badge badge-secondary">New</span></h5>
-      <h6>Example heading <span class="badge badge-secondary">New</span></h6>
-    </app-card>
-  </div>
-  <div class="col-sm-12">
-    <app-card cardTitle="Button Badges" [options]="false">
-      <button type="button" class="btn btn-primary">primary <span class="badge badge-light">4</span></button>
-      <button type="button" class="btn btn-secondary">secondary <span class="badge badge-light">4</span></button>
-      <button type="button" class="btn btn-success">success <span class="badge badge-light">4</span></button>
-      <button type="button" class="btn btn-danger">danger <span class="badge badge-light">4</span></button>
-      <button type="button" class="btn btn-warning">warning <span class="badge badge-light">4</span></button>
-      <button type="button" class="btn btn-info">info <span class="badge badge-light">4</span></button>
-    </app-card>
-  </div>
-  <div class="col-sm-12">
-    <app-card cardTitle="Contextual Variations" [options]="false">
-      <span class="badge m-r-5 badge-primary">Primary</span>
-      <span class="badge m-r-5 badge-secondary">Secondary</span>
-      <span class="badge m-r-5 badge-success">Success</span>
-      <span class="badge m-r-5 badge-danger">Danger</span>
-      <span class="badge m-r-5 badge-warning">Warning</span>
-      <span class="badge m-r-5 badge-info">Info</span>
-      <span class="badge m-r-5 badge-light">Light</span>
-      <span class="badge badge-dark">Dark</span>
-    </app-card>
-  </div>
-  <div class="col-sm-12">
-    <app-card cardTitle="Pill Badges" [options]="false">
-      <span class="badge m-r-5 badge-pill badge-primary">Primary</span>
-      <span class="badge m-r-5 badge-pill badge-secondary">Secondary</span>
-      <span class="badge m-r-5 badge-pill badge-success">Success</span>
-      <span class="badge m-r-5 badge-pill badge-danger">Danger</span>
-      <span class="badge m-r-5 badge-pill badge-warning">Warning</span>
-      <span class="badge m-r-5 badge-pill badge-info">Info</span>
-      <span class="badge m-r-5 badge-pill badge-light">Light</span>
-      <span class="badge badge-pill badge-dark">Dark</span>
-    </app-card>
-  </div>
-  <div class="col-sm-12">
-    <app-card cardTitle="Links" [options]="false">
-      <a href="javascript:" class="badge m-r-5 badge-primary">Primary</a>
-      <a href="javascript:" class="badge m-r-5 badge-secondary">Secondary</a>
-      <a href="javascript:" class="badge m-r-5 badge-success">Success</a>
-      <a href="javascript:" class="badge m-r-5 badge-danger">Danger</a>
-      <a href="javascript:" class="badge m-r-5 badge-warning">Warning</a>
-      <a href="javascript:" class="badge m-r-5 badge-info">Info</a>
-      <a href="javascript:" class="badge m-r-5 badge-light">Light</a>
-      <a href="javascript:" class="badge badge-dark">Dark</a>
-    </app-card>
-  </div>
-  <div class="col-sm-12">
-    <app-card cardTitle="Light variant" [options]="false">
-      <span class="badge m-r-5 badge-light-primary">Primary</span>
-      <span class="badge m-r-5 badge-light-secondary">Secondary</span>
-      <span class="badge m-r-5 badge-light-success">Success</span>
-      <span class="badge m-r-5 badge-light-danger">Danger</span>
-      <span class="badge m-r-5 badge-light-warning">Warning</span>
-      <span class="badge m-r-5 badge-light-info">Info</span>
-      <span class="badge m-r-5 badge-light-light">Light</span>
-      <span class="badge badge-light-dark">Dark</span>
-    </app-card>
-  </div>
+    <div class="col-sm-12 ">
+        <h3>Commande</h3>
+        <div class="card text-black-50">
+            <div class="card-header">
+            </div>
+            <div class="card-body">
+                <h5 *ngIf="this.commande" class="card-title text-primary"><b>Numero de Commande:  </b>{{commande.numero}}</h5>
+                <p class="card-text">
+                    <li class="list-group-item " *ngIf="this.commande"><b>Montant :  </b>{{commande.montant| number : '1.2-2'}} FCFA</li>
+                    <li class="list-group-item " *ngIf="this.commande"><b>Montant Avance:  </b>{{commande.avance | number : '1.2-2'}} </li>
+                    <li class="list-group-item " *ngIf="this.commande"><b>Montant Restant:  </b>{{this.restant == null?0:this.restant | number: '1.2-2'}} FCFA </li>
+                    <li class="list-group-item "><b>Montant Livraison:  </b>2000 FCFA </li>
+                </p>
+            </div>
+            <div class="card-footer ">
+                <div class="row ">
+                    <div class="col-xl-8" *ngIf="this.commande">
+                        <button *ngIf="this.commande.montant != this.commande.avance" (click)="modalPayements(paiementRestant)" class='btn btn-danger btn-sm'>Payer le montant restant</button> &nbsp; &nbsp;
+                        <button class='btn btn-primary btn-sm'><i class="fas fa-eye"></i></button>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-sm-12">
+        <h3>Articles<i class="fa fa-shopping-basket" aria-hidden="true"></i></h3>
+        <div class="card text-black-50">
+            <div class="card-header">
+            </div>
+            <div class="card-body" *ngFor='let dc of details'>
+                <img [src]=" dc.produit.photoName?sanitizer.bypassSecurityTrustUrl(dc.produit.photoName):avatar " style="height: 120px;width: 180px; margin-left: 50px; margin-right: 50px; ">
+                <b style=" margin-left: 60px; margin-right: 60px; ">{{dc.produit.libelle}}</b>
+                <b>Quantité: {{dc.quantite}}</b>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div class="col-sm-12">
+        <h3>Facture</h3>
+        <div class="card text-black-50">
+            <div class="card-header">
+            </div>
+            <div class="card-body" *ngFor='let f of factures'>
+                <h5 *ngIf="this.commande" class="card-title text-primary"><b>Numero de Facture:  </b>{{f.numero}}</h5>
+                <p class="card-text">
+                    <li class="list-group-item " *ngIf="this.commande"><b>Montant :  </b>{{f.paiement.montant| number : '1.2-2'}} FCFA</li>
+                    <li class="list-group-item " *ngIf="this.commande"><b>Type de Paiement:  </b>{{f.paiement.typePaiement}} </li>
+                    <li class="list-group-item" *ngIf="this.commande"><b>Date: </b>{{f.date}} </li>
+                    <li class="list-group-item"> <button class='btn btn-primary btn-sm' (click)="sendFactureAvanceByMail(f.id)">Recevoir la facture</button></li>
+                </p>
+            </div>
+            <!-- <div class="card-footer ">
+                <div class="row ">
+                    <div class="col-xl-8" *ngIf="this.commande">
+
+
+                    </div>
+
+                </div>
+            </div> -->
+        </div>
+
+    </div>
 </div>
+
+
+<ng-template #paiementRestant>
+    <div class="modal-header">
+        <h4 class="modal-title text-center" id="modal-basic-title">Paiement de la Commande</h4>
+        <button type="button" class="close" aria-label="Close" (click)="this.modalPayment.close()">
+          <span aria-hidden="true">&times;</span>
+     </button>
+    </div>
+    <div class="modal-body">
+        <div class="row col-xl-12">
+            <div class="form-group">
+                <label for="etat ">Paiement sur le restant de la commande</label>
+                <input [(ngModel)]="this.NewAvance" required="true " class="form-control " type="text " placeholder="Montant de l'avance ">
+            </div>
+            <div *ngIf="this.commande">
+                <b>Montant Total:  </b>{{commande.montant| number : '1.2-2'}} FCFA
+            </div>&nbsp; &nbsp;
+            <br>
+            <div *ngIf="this.commande">
+                <b>Montant Restant:  </b>{{this.restant == null?0:this.restant | number: '1.2-2'}} FCFA
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <input type="button" class="form-control btn btn-primary" value="Payer" (click)="PayAvance()">
+        </div>
+    </div>
+</ng-template>

@@ -36,7 +36,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     BreadcrumbModule,
     ModalModule,
     ClickOutsideModule,
-    LightboxModule
+    LightboxModule,
+    
   ],
   exports: [
     CommonModule,
@@ -54,7 +55,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     SpinnerComponent,
     ApexChartComponent,
     GalleryComponent,
-    ToastComponent
+    ToastComponent,
   ],
   declarations: [
     DataFilterPipe,
@@ -63,7 +64,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     SpinnerComponent,
     ApexChartComponent,
     ToastComponent,
-    GalleryComponent
+    GalleryComponent,
   ],
   providers: [
     {

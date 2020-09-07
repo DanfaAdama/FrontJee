@@ -1,5 +1,6 @@
 import { DetailCommandeData } from './DetailCommandeData';
 import { ProduitData } from './ProduitData';
+import { FactureData } from './FactureData';
 
 export interface ICommande{
     id?: number;
@@ -12,6 +13,7 @@ export interface ICommande{
     id_user?:any;
     avance?:any;
     details_commandes?: DetailCommandeData[];
+    factures?:FactureData[];
 }
 
 export class CommandeData implements ICommande {
@@ -25,7 +27,8 @@ export class CommandeData implements ICommande {
       public user?: any,
       public id_user?:any,
       public avance?:any,
-      public  details_commandes?: DetailCommandeData[]
+      public  details_commandes?: DetailCommandeData[],
+      public factures?: FactureData[]
     
     ){
     
